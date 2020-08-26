@@ -8,7 +8,7 @@ export const FETCH_FORECAST = 'FETCH_FORECAST';
 // action creator
 export const fetchWeather = (city,units) => {
 
-  const WEATHER_URL = `http://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}`;
+  const WEATHER_URL = `https://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}`;
   const url = `${WEATHER_URL}&units=${units}&q=${city}`;
   const request = axios.get(url);
   
@@ -30,7 +30,7 @@ export const fetchWeather = (city,units) => {
 
 export const fetchForecast = (city, units) => {
 
-  const FORECAST_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
+  const FORECAST_URL = `https://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
   const url = `${FORECAST_URL}&units=${units}&q=${city}`;
   const request = axios.get(url);
 
