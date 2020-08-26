@@ -53,7 +53,6 @@ class WeatherHourly extends Component  {
     render(){
 
         var day = this.state.dayForecast;
-        console.log(day);
         var dayForecast = [];
 
         
@@ -61,8 +60,6 @@ class WeatherHourly extends Component  {
            return dayForecast = res.list;
             
         });
-
-        console.log(dayForecast);
         
         var inputDate = this.state.date.split(' ');
         var j=0;
@@ -76,17 +73,14 @@ class WeatherHourly extends Component  {
                     tempDay[j++] = dayForecast[i];
         }
 
-        console.log(tempDay);
-
+    
         var displayTemp = '';
         if( this.state.celsius){
-            console.log("Hi");
             displayTemp = <small>C</small>
         }else {
             
             displayTemp =  <small>F</small>
         }
-        console.log(displayTemp)
         var displayFeels = this.state.celsius ? <small>C</small> : <small>F</small>;
 
         const dayCards = tempDay.length ? (
@@ -97,7 +91,7 @@ class WeatherHourly extends Component  {
                             <div className="card-content">
                                 <h4>{this.tConvert(day.dt_txt.split(' ')[1])}</h4>
                                 <span className="card-title">{day.weather[0].main}</span>
-                                <img alt="img" src={"http://openweathermap.org/img/wn/"+day.weather[0].icon+"@2x.png"} />
+                                <img alt="img" src={"https://openweathermap.org/img/wn/"+day.weather[0].icon+"@2x.png"} />
                                 <h4><strong>{Math.round(day.main.temp)}&deg;</strong>{displayTemp}</h4>
                                 <h5>Feels like: {Math.round(day.main.feels_like)}&deg;{displayFeels}</h5>
                             </div>

@@ -92,7 +92,7 @@ class WeatherDay extends Component  {
                                             
                                             <div>&nbsp;</div>
                                             <div className="city">{cityData.name}</div>
-                                            <div className="icon"><img alt="icon" src={"http://openweathermap.org/img/wn/"+cityData.weather[0].icon+"@2x.png"}  height = "90px" width = "90px"/></div>
+                                            <div className="icon"><img alt="icon" src={"https://openweathermap.org/img/wn/"+cityData.weather[0].icon+"@2x.png"}  height = "90px" width = "90px"/></div>
                                             <div className="description"> {cityData.weather[0].description}</div>
                                             {displayTemp}
                                             {displayFeels}
