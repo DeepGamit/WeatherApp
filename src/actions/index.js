@@ -11,7 +11,6 @@ export const fetchWeather = (city,units) => {
   const WEATHER_URL = `https://api.openweathermap.org/data/2.5/weather?appid=${API_KEY}`;
   const url = `${WEATHER_URL}&units=${units}&q=${city}`;
   const request = axios.get(url);
-  console.log(request);
   
 
   // fetch (url).then(function(response){

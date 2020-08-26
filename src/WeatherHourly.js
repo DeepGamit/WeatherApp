@@ -20,7 +20,7 @@ class WeatherHourly extends Component  {
     componentDidMount(){
 
 
-        console.log(this.state.celcius);
+       
         this.setState({
             dayForecast: this.props.forecast,
             date: this.props.location.state.date,
@@ -53,6 +53,7 @@ class WeatherHourly extends Component  {
     render(){
 
         var day = this.state.dayForecast;
+       
         var dayForecast = [];
 
         
@@ -60,6 +61,8 @@ class WeatherHourly extends Component  {
            return dayForecast = res.list;
             
         });
+
+       
         
         var inputDate = this.state.date.split(' ');
         var j=0;
@@ -73,14 +76,16 @@ class WeatherHourly extends Component  {
                     tempDay[j++] = dayForecast[i];
         }
 
-    
+        
         var displayTemp = '';
         if( this.state.celsius){
+            console.log("Hi");
             displayTemp = <small>C</small>
         }else {
             
             displayTemp =  <small>F</small>
         }
+       
         var displayFeels = this.state.celsius ? <small>C</small> : <small>F</small>;
 
         const dayCards = tempDay.length ? (
