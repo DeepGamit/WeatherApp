@@ -12,6 +12,7 @@ export const fetchWeather = (city,units) => {
   const url = `${WEATHER_URL}&units=${units}&q=${city}`;
   const request = axios.get(url);
   
+  
 
   // fetch (url).then(function(response){
   //   return response.json()
